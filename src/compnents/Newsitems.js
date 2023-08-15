@@ -9,15 +9,17 @@ export class Newsitems extends Component {
         <div className="card">
           <img src={!imageUrl?"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1fd0LG.img?w=749&h=421&m=6":imageUrl} className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{title}<h6><span class="badge bg-secondary">News</span></h6></h5>
-            <p className="card-text"> {discription} </p>
+            {/* <h5 className="card-title">{title}<h6><span class="badge bg-secondary">News</span></h6></h5> */}
+            <h5 className="card-title">{title.split(' ').slice(0,8).join(' ')} ...<h6><span class="badge bg-secondary">News</span></h6></h5>
+
+            {/* <p className="card-text"> {discription} </p> */}
+            <p className="card-text"> {discription.split(' ').slice(0,20).join(' ')} ...</p>
             <div className="card-footer"><small className="text-body-secondary">By: {!author? 'Unknown': author} on {new Date (date).toGMTString()}</small></div>
-            <Link  rel="noreferrer" href={newsUrl} target="_blank" className="btn btn-sm btn-dark">Read more</Link>
+            <Link  rel="noreferrer" to={newsUrl} target="_blank" className="btn btn-sm btn-dark">Read more</Link>
           </div>
         </div>
       </div>
-    ); 
-  }
+    );   }
 }
 
 export default Newsitems;

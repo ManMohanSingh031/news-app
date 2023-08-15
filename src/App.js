@@ -18,7 +18,6 @@ export default class App extends Component {
             <Route exact path="/health" element={<News key="health" pageSize={6} country="in" category="health"/>} ></Route>
             <Route exact path="/science" element={<News key="science" pageSize={6} country="in" category="science"/>}></Route>
             <Route exact path="/technology" element={<News key="technology" pageSize={6} country="in" category="technology"/>}></Route>
-          
           </Routes>
         </Router>
       </div>
